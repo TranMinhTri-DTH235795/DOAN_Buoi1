@@ -35,6 +35,10 @@
             btnHuyBo = new Button();
             btnSua = new Button();
             btnThem = new Button();
+            txtDoUuTien = new TextBox();
+            txtMoTa = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
             txtTenLoai = new TextBox();
             label1 = new Label();
             groupBox2 = new GroupBox();
@@ -42,10 +46,7 @@
             STT = new DataGridViewTextBoxColumn();
             TenLoai = new DataGridViewTextBoxColumn();
             MoTa = new DataGridViewTextBoxColumn();
-            label2 = new Label();
-            txtMoTa = new TextBox();
-            label3 = new Label();
-            txtDoUuTien = new TextBox();
+            DoUuTien = new DataGridViewTextBoxColumn();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDSSP).BeginInit();
@@ -133,6 +134,38 @@
             btnThem.UseVisualStyleBackColor = true;
             btnThem.Click += btnThem_Click;
             // 
+            // txtDoUuTien
+            // 
+            txtDoUuTien.Location = new Point(238, 65);
+            txtDoUuTien.Name = "txtDoUuTien";
+            txtDoUuTien.Size = new Size(108, 30);
+            txtDoUuTien.TabIndex = 1;
+            // 
+            // txtMoTa
+            // 
+            txtMoTa.Location = new Point(431, 65);
+            txtMoTa.Name = "txtMoTa";
+            txtMoTa.Size = new Size(499, 30);
+            txtMoTa.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(117, 68);
+            label3.Name = "label3";
+            label3.Size = new Size(99, 22);
+            label3.TabIndex = 0;
+            label3.Text = "Độ ưu tiên:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(363, 68);
+            label2.Name = "label2";
+            label2.Size = new Size(62, 22);
+            label2.TabIndex = 0;
+            label2.Text = "Mô tả:";
+            // 
             // txtTenLoai
             // 
             txtTenLoai.Location = new Point(238, 29);
@@ -165,7 +198,7 @@
             dgvDSSP.AllowUserToDeleteRows = false;
             dgvDSSP.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvDSSP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDSSP.Columns.AddRange(new DataGridViewColumn[] { STT, TenLoai, MoTa });
+            dgvDSSP.Columns.AddRange(new DataGridViewColumn[] { STT, TenLoai, MoTa, DoUuTien });
             dgvDSSP.Dock = DockStyle.Fill;
             dgvDSSP.Location = new Point(3, 26);
             dgvDSSP.MultiSelect = false;
@@ -197,37 +230,12 @@
             MoTa.MinimumWidth = 6;
             MoTa.Name = "MoTa";
             // 
-            // label2
+            // DoUuTien
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(363, 68);
-            label2.Name = "label2";
-            label2.Size = new Size(62, 22);
-            label2.TabIndex = 0;
-            label2.Text = "Mô tả:";
-            // 
-            // txtMoTa
-            // 
-            txtMoTa.Location = new Point(431, 65);
-            txtMoTa.Name = "txtMoTa";
-            txtMoTa.Size = new Size(499, 30);
-            txtMoTa.TabIndex = 1;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(117, 68);
-            label3.Name = "label3";
-            label3.Size = new Size(99, 22);
-            label3.TabIndex = 0;
-            label3.Text = "Độ ưu tiên:";
-            // 
-            // txtDoUuTien
-            // 
-            txtDoUuTien.Location = new Point(238, 65);
-            txtDoUuTien.Name = "txtDoUuTien";
-            txtDoUuTien.Size = new Size(108, 30);
-            txtDoUuTien.TabIndex = 1;
+            DoUuTien.FillWeight = 30F;
+            DoUuTien.HeaderText = "Độ ưu tiên";
+            DoUuTien.MinimumWidth = 6;
+            DoUuTien.Name = "DoUuTien";
             // 
             // frmLoaiSanPham
             // 
@@ -261,12 +269,13 @@
         private TextBox txtTenLoai;
         private Label label1;
         private DataGridView dgvDSSP;
-        private DataGridViewTextBoxColumn STT;
-        private DataGridViewTextBoxColumn TenLoai;
-        private DataGridViewTextBoxColumn MoTa;
         private TextBox txtMoTa;
         private Label label3;
         private Label label2;
         private TextBox txtDoUuTien;
+        private DataGridViewTextBoxColumn STT;
+        private DataGridViewTextBoxColumn TenLoai;
+        private DataGridViewTextBoxColumn MoTa;
+        private DataGridViewTextBoxColumn DoUuTien;
     }
 }

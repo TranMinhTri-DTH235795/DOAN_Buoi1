@@ -11,7 +11,7 @@ namespace QuanLyCuaHang.Data
     {
         public int ID { get; set; }
         public string TenHang { get; set; }
-        public string? QuocGia { get; set; } // Thêm để phân biệt hàng nội địa/nhập khẩu
+        public string? QuocGia { get; set; } 
         public string? ThongTinLienHe { get; set; }
 
         public virtual ObservableCollectionListSource<SanPham> SanPham { get; } = new();

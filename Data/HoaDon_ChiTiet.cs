@@ -13,7 +13,7 @@ namespace QuanLyCuaHang.Data
         public int SanPhamID { get; set; }
         public short SoLuongBan { get; set; }
         public int DonGiaBan { get; set; }
-        public int ThoiGianBaoHanh { get; set; } // Lưu số tháng bảo hành tại thời điểm mua
+        public int ThoiGianBaoHanh { get; set; } 
 
         public virtual HoaDon HoaDon { get; set; } = null!;
         public virtual SanPham SanPham { get; set; } = null!;

@@ -13,7 +13,7 @@ namespace QuanLyCuaHang.Data
         public int NhanVienID { get; set; }
         public int KhachHangID { get; set; }
         public DateTime NgayLap { get; set; }
-        public string? PhuongThucThanhToan { get; set; } // Tiền mặt, Chuyển khoản
+        public string? PhuongThucThanhToan { get; set; } 
         public long TongTien { get; set; }
 
         public virtual ObservableCollectionListSource<HoaDon_ChiTiet> HoaDon_ChiTiet { get; } = new();
