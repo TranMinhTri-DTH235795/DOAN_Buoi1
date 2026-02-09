@@ -1,5 +1,9 @@
 ﻿using QuanLyCuaHang.Data;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+
 namespace QuanLyCuaHang
 {
     public partial class frmLoaiSanPham : Form
@@ -7,21 +11,23 @@ namespace QuanLyCuaHang
         QLCHDbContext context = new QLCHDbContext(); // Khởi tạo biến ngữ cảnh CSDL 
         bool xuLyThem = false; // Kiểm tra có nhấn vào nút Thêm hay không? 
         int id; // Lấy mã loại sản phẩm (dùng cho Sửa và Xóa) 
+
         private void BatTatChucNang(bool giaTri)
         {
             btnLuu.Enabled = giaTri;
             btnHuyBo.Enabled = giaTri;
             txtTenLoai.Enabled = giaTri;
-            txtMoTa.Enabled = giaTri;
-            txtDoUuTien.Enabled = giaTri;
+
             btnThem.Enabled = !giaTri;
             btnSua.Enabled = !giaTri;
             btnXoa.Enabled = !giaTri;
         }
+
         public frmLoaiSanPham()
         {
             InitializeComponent();
         }
+
         private void frmLoaiSanPham_Load(object sender, EventArgs e)
         {
             BatTatChucNang(false);
@@ -35,18 +41,14 @@ namespace QuanLyCuaHang
             txtTenLoai.DataBindings.Clear();
             txtTenLoai.DataBindings.Add("Text", bindingSource, "TenLoai", false, DataSourceUpdateMode.Never);
 
-            txtMoTa.DataBindings.Clear();
-            txtMoTa.DataBindings.Add("Text", bindingSource, "MoTa", false, DataSourceUpdateMode.Never);
-
             dgvDSSP.DataSource = bindingSource;
         }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             xuLyThem = true;
             BatTatChucNang(true);
             txtTenLoai.Clear();
-            txtMoTa.Clear();
-            txtDoUuTien.Clear();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -58,14 +60,10 @@ namespace QuanLyCuaHang
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtDoUuTien.Text))
-            {
-                MessageBox.Show("Vui lòng nhập số thứ tự ưu tiên!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtDoUuTien.Text = "0"; // Gán giá trị mặc định nếu để trống
-                return;
-            }
             if (string.IsNullOrWhiteSpace(txtTenLoai.Text))
+            {
                 MessageBox.Show("Vui lòng nhập tên loại sản phẩm?", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
                 if (xuLyThem)

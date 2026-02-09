@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuanLyCuaHang.Data;
 
@@ -11,9 +12,11 @@ using QuanLyCuaHang.Data;
 namespace QuanLyCuaHang.Migrations
 {
     [DbContext(typeof(QLCHDbContext))]
-    partial class QLCHDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260323160047_CapNhatCotNhanVien")]
+    partial class CapNhatCotNhanVien
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -119,9 +122,6 @@ namespace QuanLyCuaHang.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("DienThoai")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("HoVaTen")
@@ -280,8 +280,20 @@ namespace QuanLyCuaHang.Migrations
                     b.Property<string>("HinhAnh")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("KieuKetNoi")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Layout")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("LoaiSanPhamID")
                         .HasColumnType("int");
+
+                    b.Property<string>("LoaiSwitch")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MoTa")
                         .HasColumnType("nvarchar(max)");

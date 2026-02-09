@@ -12,8 +12,10 @@ namespace QuanLyCuaHang.Data
         public int ID { get; set; }
         public string HoVaTen { get; set; }
         public string? DienThoai { get; set; }
+        public string? DiaChi { get; set; }
         public string TenDangNhap { get; set; }
         public string MatKhau { get; set; }
+        public DateTime? NgaySinh { get; set; }
         public bool LaQuanLy { get; set; } // true: Quản lý, false: Nhân viên bán hàng
 
         public virtual ObservableCollectionListSource<HoaDon> HoaDon { get; } = new();

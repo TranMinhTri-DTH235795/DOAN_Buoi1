@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuanLyCuaHang.Data;
 
@@ -11,9 +12,11 @@ using QuanLyCuaHang.Data;
 namespace QuanLyCuaHang.Migrations
 {
     [DbContext(typeof(QLCHDbContext))]
-    partial class QLCHDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260325181310_Hoadon")]
+    partial class Hoadon
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
